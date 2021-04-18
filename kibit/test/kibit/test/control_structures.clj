@@ -6,6 +6,7 @@
   (are [expected-alt-form test-form]
        (= expected-alt-form (:alt (kibit/check-expr test-form)))
     '(when test then) '(if test then nil)
+    '(when-not test then) '(if-not test then nil)
     '(when-not test else) '(if test nil else)
     '(when test body) '(if test (do body))
     '(if-not test then else) '(if (not test) then else)
